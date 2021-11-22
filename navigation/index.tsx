@@ -69,6 +69,7 @@ function BottomTabNavigator() {
         component={TabOneScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
+          headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -91,6 +92,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Activity',
+          headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -99,6 +101,7 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={{
           title: 'Diet',
+          headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
@@ -107,6 +110,7 @@ function BottomTabNavigator() {
         component={TabFourScreen}
         options={{
           title: 'Settings',
+          headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

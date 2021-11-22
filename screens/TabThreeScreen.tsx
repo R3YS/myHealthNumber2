@@ -2,32 +2,402 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
+import {   View,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+  Text,
+  TextInput} from 'react-native';
+  import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+  import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+  import EntypoIcon from "react-native-vector-icons/Entypo";
+  import IoniconsIcon from "react-native-vector-icons/Ionicons";
+  import { RootTabScreenProps } from '../types';
 
-export default function TabThreeScreen({ navigation }: RootTabScreenProps<'TabThree'>) {
+export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Three</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="Diet Screen" />
+    <View style={styles.imageStack}>
+      <ImageBackground
+        source={require("../assets/images/Diet2.jpg")}
+        resizeMode="stretch"
+        style={styles.image}
+        imageStyle={styles.image_imageStyle}
+      >
+        <View style={styles.rect1Filler}></View>
+        <View style={styles.rect1}>
+          <View style={styles.stackFiller}></View>
+          <View style={styles.group1Stack}>
+            <View style={styles.group1}>
+
+
+              <EntypoIcon name="area-graph" style={styles.icon6}></EntypoIcon>
+              <IoniconsIcon
+                name="md-settings"
+                style={styles.icon7}
+              ></IoniconsIcon>
+            </View>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("Diet")}
+              style={styles.button4}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("Activity")}
+              style={styles.button5}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("WelcomePage")}
+              style={styles.button6}
+            ></TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("Settings")}
+              style={styles.button7}
+            ></TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
+      <Text style={styles.text}>Diet</Text>
+      <TextInput
+        placeholder="Calorie Count"
+        style={styles.textInput1}
+        
+      ></TextInput>
+      <TextInput
+        placeholder="Calorie Count"
+        style={styles.textInput2}
+      ></TextInput>
+      <TextInput
+        placeholder="Calorie Count"
+        style={styles.textInput3}
+      ></TextInput>
+      <TextInput
+        placeholder="Calorie Count"
+        style={styles.textInput4}
+      ></TextInput>
+      <EntypoIcon name="check" style={styles.icon}></EntypoIcon>
+      <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
+      <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
+      <TouchableOpacity style={styles.button}></TouchableOpacity>
+      <TouchableOpacity style={styles.button2}></TouchableOpacity>
+      <TouchableOpacity style={styles.button3}></TouchableOpacity>
+      <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
+      <TouchableOpacity style={styles.button1}></TouchableOpacity>
+      <Text style={styles.loremIpsum}>What did you eat today?</Text>
+      <Text style={styles.loremIpsum1}>Total Calorie Intake: xxx</Text>
+      <Text style={styles.loremIpsum2}>Percent Daily Normal: xx%</Text>
+      <Text style={styles.breakfast}>Breakfast:</Text>
+      <Text style={styles.lunch}>Lunch:</Text>
+      <Text style={styles.dinner}>Dinner:</Text>
+      <Text style={styles.snacksOthers}>Snacks/Others:</Text>
     </View>
+    </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
-  title: {
+  image: {
+    top: 0,
+    left: 0,
+    width: 1306,
+    height: 1196,
+    position: "absolute"
+  },
+  image_imageStyle: {
+    opacity: 0.5
+  },
+  rect1Filler: {
+    flex: 1
+  },
+  rect1: {
+    height: 70,
+    backgroundColor: "rgba(0,0,0,1)",
+    marginBottom: 295,
+    marginLeft: 633,
+    marginRight: 313
+  },
+  stackFiller: {
+    flex: 1
+  },
+  group1: {
+    left: 0,
+    height: 40,
+    position: "absolute",
+    right: 0,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    bottom: 15
+  },
+  icon4: {
+    color: "rgba(255,255,255,1)",
+    fontSize: 40
+  },
+  icon5: {
+    color: "rgba(255,255,255,1)",
+    fontSize: 40
+  },
+  icon6: {
+    color: "rgba(255,255,255,1)",
+    fontSize: 40
+  },
+  icon7: {
+    color: "rgba(255,255,255,1)",
+    fontSize: 40
+  },
+  button4: {
+    left: 0,
+    width: 90,
+    height: 70,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    bottom: 0
+  },
+  button5: {
+    left: 98,
+    width: 90,
+    height: 70,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    bottom: 0
+  },
+  button6: {
+    left: 187,
+    width: 85,
+    height: 70,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    bottom: 0
+  },
+  button7: {
+    left: 276,
+    width: 84,
+    height: 70,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    bottom: 0
+  },
+  group1Stack: {
+    height: 70
+  },
+  text: {
+    top: 211,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#121212",
+    textAlign: "center",
+    fontSize: 40,
+    height: 42,
+    width: 75,
+    left: 775
+  },
+  textInput1: {
+    top: 674,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    textAlign: "center",
+    fontSize: 16,
+    borderWidth: 3,
+    borderColor: "#000000",
+    borderRadius: 15,
+    width: 235,
+    left: 653,
+    height: 58,
+    backgroundColor: "rgba(248,231,28,0.5)"
+  },
+  textInput2: {
+    top: 572,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    width: 235,
+    textAlign: "center",
+    fontSize: 16,
+    backgroundColor: "rgba(248,231,28,0.5)",
+    borderWidth: 3,
+    borderColor: "#000000",
+    borderRadius: 15,
+    height: 58,
+    left: 653
+  },
+  textInput3: {
+    top: 469,
+    left: 653,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    textAlign: "center",
+    fontSize: 16,
+    width: 235,
+    backgroundColor: "rgba(248,231,28,0.5)",
+    borderWidth: 3,
+    borderColor: "#000000",
+    borderRadius: 15,
+    height: 58
+  },
+  textInput4: {
+    top: 367,
+    left: 653,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    width: 235,
+    textAlign: "center",
+    fontSize: 16,
+    borderWidth: 3,
+    borderColor: "#000000",
+    borderStyle: "solid",
+    borderRadius: 15,
+    height: 58,
+    backgroundColor: "rgba(248,231,28,0.5)"
+  },
+  icon: {
+    top: 375,
+    position: "absolute",
+    color: "rgba(66,133,48,1)",
+    fontSize: 40,
+    right: 364
+  },
+  icon2: {
+    top: 576,
+    position: "absolute",
+    color: "rgba(66,133,48,1)",
+    fontSize: 40,
+    right: 361
+  },
+  icon3: {
+    top: 477,
+    position: "absolute",
+    color: "rgba(66,133,48,1)",
+    fontSize: 40,
+    right: 363
+  },
+  button: {
+    top: 369,
+    height: 50,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    right: 360,
+    width: 50
+  },
+  button2: {
+    top: 576,
+    height: 50,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    width: 50,
+    right: 357
+  },
+  button3: {
+    top: 474,
+    height: 50,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    right: 358,
+    width: 50
+  },
+  icon1: {
+    position: "absolute",
+    color: "rgba(66,133,48,1)",
+    fontSize: 40,
+    right: 364,
+    top: 675
+  },
+  button1: {
+    top: 670,
+    position: "absolute",
+    backgroundColor: "#E6E6E6",
+    opacity: 0,
+    height: 50,
+    width: 50,
+    right: 358
+  },
+  loremIpsum: {
+    top: 289,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#121212",
     fontSize: 20,
-    fontWeight: 'bold',
+    left: 706,
+    width: 225,
+    height: 24,
+    textAlign: "center"
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  loremIpsum1: {
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#121212",
+    fontSize: 20,
+    height: 35,
+    width: 264,
+    top: 756
   },
+  loremIpsum2: {
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#121212",
+    fontSize: 20,
+    height: 29,
+    width: 262,
+    top: 791
+  },
+  breakfast: {
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    fontSize: 16,
+    width: 82,
+    height: 20,
+    top: 341
+  },
+  lunch: {
+    top: 444,
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    fontSize: 16,
+    width: 58,
+    height: 20
+  },
+  dinner: {
+    top: 547,
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    fontSize: 16,
+    width: 59,
+    height: 20
+  },
+  snacksOthers: {
+    top: 649,
+    left: 658,
+    position: "absolute",
+    fontFamily: "roboto-500",
+    color: "#121212",
+    fontSize: 16,
+    width: 118,
+    height: 20
+  },
+  imageStack: {
+    width: 1306,
+    height: 1196,
+    marginTop: -161,
+    marginLeft: -633
+  }
+
 });

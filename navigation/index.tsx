@@ -20,6 +20,10 @@ import TabThreeScreen from '../screens/TabThreeScreen';
 import TabFourScreen from '../screens/TabFourScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -70,7 +74,7 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
           headerTitle:() => {return null},
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="home" size={24} color="black" />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -93,7 +97,7 @@ function BottomTabNavigator() {
         options={{
           title: 'Activity',
           headerTitle:() => {return null},
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome5 name="running" size={24} color="black" />,
         }}
       />
       <BottomTab.Screen
@@ -102,7 +106,7 @@ function BottomTabNavigator() {
         options={{
           title: 'Diet',
           headerTitle:() => {return null},
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="food-apple" size={24} color="black" />,
         }}
       />
       <BottomTab.Screen
@@ -111,7 +115,7 @@ function BottomTabNavigator() {
         options={{
           title: 'Settings',
           headerTitle:() => {return null},
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons name="md-settings-sharp" size={24} color="black" />,
         }}
       />
     </BottomTab.Navigator>

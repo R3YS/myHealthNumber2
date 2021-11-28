@@ -13,16 +13,6 @@ import {   View,
   import EntypoIcon from "react-native-vector-icons/Entypo";
   import IoniconsIcon from "react-native-vector-icons/Ionicons";
   import { RootTabScreenProps } from '../types';
-  import React, {useState} from 'react'
-
-  funtion App(){
-    const [data,setData]=useState(null);
-    const [print,setPrint]=useState(false);
-  }
-  function getData(val){
-    setData(val.target.value)
-    setPrint(false)
-  }
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -70,32 +60,28 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput1}
-        type="text" onChange={getData}
+        
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput2}
-        type="text" onChange={getData}
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput3}
-        type="text" onChange={getData}
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput4}
-        type="text" onChange={getData}
       ></TextInput>
       <EntypoIcon name="check" style={styles.icon}></EntypoIcon>
-      <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
-      <TouchableOpacity onClick={()=>setPrint(true)} style={styles.button}></TouchableOpacity>
-      <TouchableOpacity onClick={()=>setPrint(true)} style={styles.button1}></TouchableOpacity>
-      <TouchableOpacity onClick={()=>setPrint(true)} style={styles.button2}></TouchableOpacity>
-      <TouchableOpacity onClick={()=>setPrint(true)} style={styles.button3}></TouchableOpacity>
-      
+      <TouchableOpacity style={styles.button}></TouchableOpacity>
+      <TouchableOpacity style={styles.button2}></TouchableOpacity>
+      <TouchableOpacity style={styles.button3}></TouchableOpacity>
+      <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
+      <TouchableOpacity style={styles.button1}></TouchableOpacity>
       <Text style={styles.loremIpsum}>What did you eat today?</Text>
       <Text style={styles.loremIpsum1}>Total Calorie Intake: xxx</Text>
       <Text style={styles.loremIpsum2}>Percent Daily Normal: xx%</Text>

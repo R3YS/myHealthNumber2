@@ -15,6 +15,7 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import './global.js';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (

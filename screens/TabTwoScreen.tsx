@@ -9,13 +9,26 @@ ImageBackground,
 Text,
 TextInput,
 TouchableOpacity,
-Button } from 'react-native';
+Button,
+Form } from 'react-native';
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 
+
+
+
+
 export default function TabTwoScreen() {
+
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert("You have submitted your workouts!")
+
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.scrollAreaStack}>
@@ -90,6 +103,8 @@ export default function TabTwoScreen() {
                 </View>
 
                 <TouchableOpacity style={styles.addWorkoutButton}
+                onPress ={handleSubmit}
+
                  >
                   <Text style={styles.addWorkout2}>Add Workout</Text>
                 </TouchableOpacity>

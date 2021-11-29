@@ -27,31 +27,39 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       >
         <ImageBackground
           source={require("../assets/images/background1.jpg")}
-          resizeMode="contain"
+          resizeMode="cover"
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
           <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
-          <TouchableOpacity
+          <View style={styles.rect2}
 
             style={styles.button2}
           >
-            <Text style={styles.myHealthId}>My Health ID</Text>
-          </TouchableOpacity>
+            <Text style={styles.cardTitle}>My Health ID</Text>
+            <Text style={styles.cardInfo}>Name: {global.name}</Text>
+            <Text style={styles.cardInfo}>Age: {global.age}</Text>
+            <Text style={styles.cardInfo}>Weight: {global.weight} lbs</Text>
+            <Text style={styles.cardInfo}>Height: {global.height} cm</Text>
+            <Text style={styles.cardInfo}>Body Mass Index: {global.height} cm</Text>
+
+            </View>
           <View style={styles.rect2}>
-            <Text style={styles.loremIpsum}>
-              Let&#39;s take a look at our day!
-            </Text>
+            <Text style={styles.cardTitle}>Let&#39;s take a look at our day!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.height} calories today!</Text>
+            <Text style={styles.cardInfo}>You burned a whopping {global.height} calories today!</Text>
+            <Text style={styles.cardInfo}>Total Time Exercised: {global.height}</Text>
+            <Text style={styles.cardInfo}>Let's Keep it Going! You're on Fire!</Text>
           </View>
-          <TouchableOpacity
+          <View style={styles.rect2}
 
             style={styles.button}
           >
-            <Text style={styles.activityTracker}>Activity Tracker</Text>
-          </TouchableOpacity>
+            <Text style={styles.cardTitle}>Activity Tracker</Text>
+          </View>
           <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
-              <Text style={styles.loremIpsum2}>
+              <Text style={styles.cardTitle}>
                 What&#39;s next? Daily To-Do List
               </Text>
             </View>
@@ -63,17 +71,17 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             </View>
           </View>
           <View style={styles.rect5}>
-            <Text style={styles.weeklyReport}>Weekly Report</Text>
+            <Text style={styles.cardTitle}>Weekly Report</Text>
           </View>
           <View style={styles.rect6}>
-            <Text style={styles.monthlyReport}>Monthly Report</Text>
+            <Text style={styles.cardTitle}>Monthly Report</Text>
           </View>
-          <TouchableOpacity
+          <View style={styles.rect2}
 
             style={styles.button3}
           >
-            <Text style={styles.diet}>Diet</Text>
-          </TouchableOpacity>
+            <Text style={styles.cardTitle}>Diet</Text>
+          </View>
         </ImageBackground>
       </ScrollView>
     </View>
@@ -120,13 +128,22 @@ const styles = StyleSheet.create({
     marginTop: 54,
     marginLeft: 664
   },
-  myHealthId: {
+  cardTitle: {
     fontFamily: "roboto-regular",
+    fontWeight: "bold",
     color: "#121212",
-    width: 80,
     height: 18,
     marginTop: 10,
-    marginLeft: 10
+    marginLeft: 10,
+    textDecorationLine: "underline",
+    fontSize:13,
+  },
+  cardInfo: {
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    marginLeft: 10,
+    fontSize:12,
+    height:18,
   },
   rect2: {
     width: 280,

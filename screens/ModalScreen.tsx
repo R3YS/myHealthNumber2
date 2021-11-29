@@ -8,16 +8,25 @@ import { Button, Alert} from "react-native";
 import './global.js';
 
 export default function ModalScreen() {
+  //I set up constants for each variable. These do not reference Global Varaibles YET but will be copied in the Function
   const [name, setName] = React.useState("");
   const [age, setAge] = React.useState(null);
+  const [weight, setWeight] = React.useState(null);
+  const [height, setHeight] = React.useState(null);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{global.name}'s Information</Text>
-      <Text style={styles.title}>Go Ahead and Change the Info, We'll Take Care of The Rest</Text>
-      <TextInput style={styles.input} placeholder = {global.name} onChangeText={(value) => setName(value)}  />
-      <TextInput style={styles.input} onChangeText={setAge} value={age} placeholder = {global.age} keyboardType="numeric" />
+      <Text style={styles.subtitle}>Go Ahead and Change the Info, We'll Take Care of The Rest</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Button title="Press me" onPress={() => {global.name = name, global.age = age}} />
+      <Text style={styles.subsubtitle}>Name:</Text>
+      <TextInput style={styles.input} placeholder = {global.name} onChangeText={(value) => setName(value)}  />
+      <Text style={styles.subsubtitle}>Age:</Text>
+      <TextInput style={styles.input} onChangeText={setAge} value={age} placeholder = {global.age} keyboardType="numeric" />
+      <Text style={styles.subsubtitle}>Height:</Text>
+      <TextInput style={styles.input} onChangeText={setHeight} value={height} placeholder = {global.height} keyboardType="numeric" />
+      <Text style={styles.subsubtitle}>Weight:</Text>
+      <TextInput style={styles.input} onChangeText={setWeight} value={weight} placeholder = {global.weight} keyboardType="numeric" />
+      <Button title="SUBMIT" onPress={() => {global.name = name, global.age = age}} />
       {/* Use a light status bar on iOS to account for the black space above the modal */}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
@@ -32,8 +41,9 @@ const styles = StyleSheet.create({
     marginVertical: 20
   },
   title: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
+    color: `#6495ed`,
   },
   separator: {
     marginVertical: 30,
@@ -46,6 +56,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     color: 'white',
+  },
+  subtitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    height: 5,
+    fontStyle: 'italic',
+  },
+  subsubtitle: {
+    fontSize: 10,
+    fontWeight: 'bold',
   },
 
 });

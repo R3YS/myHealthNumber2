@@ -63,3 +63,7 @@ global.distance7 = 3;
 global.distance8 = 3;
 global.distance9 = 3;
 global.distance10 = 3;
+global.breakfast = 0;
+global.lunch = 0;
+global.dinner = 0;
+global.snack = 0;

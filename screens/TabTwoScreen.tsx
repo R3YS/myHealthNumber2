@@ -9,26 +9,21 @@ ImageBackground,
 Text,
 TextInput,
 TouchableOpacity,
-Button,
-Form } from 'react-native';
+Button } from 'react-native';
+
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import WorkoutComponent from '../components/WorkoutComponent';
+import CardioComponent from '../components/CardioComponent';
 
-
-
-
+const handleSubmit = event => {
+  event.preventDefault();
+  alert("You have submitted your workouts!")
+}
 
 export default function TabTwoScreen() {
-
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    alert("You have submitted your workouts!")
-
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.scrollAreaStack}>
@@ -39,7 +34,7 @@ export default function TabTwoScreen() {
             <View style={styles.backgroundStack}>
               <ImageBackground
                 source={require("../assets/images/adi-goldstein-7BpeiA0bhxs-unsplash.jpg")}
-                resizeMode="contain"
+                resizeMode="cover"
                 style={styles.background}
                 imageStyle={styles.background_imageStyle}
               >
@@ -75,74 +70,40 @@ export default function TabTwoScreen() {
                 name="bike"
                 style={styles.cardioicon}
               ></MaterialCommunityIconsIcon>
+              
               <View style={styles.weightliftingSection}>
                 <View style={styles.rectWeight}>
-                  <View style={styles.workout2Row}>
-                    <Text style={styles.workout2}>Workout:</Text>
-                    <TextInput
-                      placeholder="Workout"
-                      style={styles.enterWorkout}
-                    ></TextInput>
-                  </View>
-                  <View style={styles.sets2Row}>
-                    <Text style={styles.sets2}>Sets:</Text>
-                    <TextInput
-                      placeholder="# of Sets"
-                      keyboardType="numeric"
-                      style={styles.enterSets}
-                    ></TextInput>
-                  </View>
-                  <View style={styles.repsLabelRow}>
-                    <Text style={styles.repsLabel}>Reps:</Text>
-                    <TextInput
-                      placeholder="# of Reps"
-                      keyboardType="numeric"
-                      style={styles.enterReps}
-                    ></TextInput>
-                  </View>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
+                  <WorkoutComponent/>
                 </View>
-
-                <TouchableOpacity style={styles.addWorkoutButton}
-                onPress ={handleSubmit}
-
-                 >
-                  <Text style={styles.addWorkout2}>Add Workout</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.deleteWorkoutButton}>
-                  <Text style={styles.deleteWorkout}>Delete Workout</Text>
-                </TouchableOpacity>
               </View>
+              
               <View style={styles.cardioSection}>
                 <View style={styles.rectCardio}>
-                  <View style={styles.exerciseRow}>
-                    <Text style={styles.exercise}>Exercise:</Text>
-                    <TextInput
-                      placeholder="Exercise"
-                      style={styles.enterExercise}
-                    ></TextInput>
-                  </View>
-                  <View style={styles.durationRow}>
-                    <Text style={styles.duration}>Duration:</Text>
-                    <TextInput
-                      placeholder="e.g. 30 min"
-                      style={styles.enterDuration}
-                    ></TextInput>
-                  </View>
-                  <View style={styles.distanceRow}>
-                    <Text style={styles.distance}>Distance:</Text>
-                    <TextInput
-                      placeholder="e.g. 10km/10mi"
-                      style={styles.enterDistance}
-                    ></TextInput>
-                  </View>
+                  <CardioComponent/>
+                  <CardioComponent/>
+                  <CardioComponent/>
+                  <CardioComponent/>
+                  <CardioComponent/>
                 </View>
-                <TouchableOpacity style={styles.addCardioButton}>
-                  <Text style={styles.addCardioText}>Add Cardio</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.deleteCardioButton}>
-                  <Text style={styles.deleteCardio}>Delete Cardio</Text>
-                </TouchableOpacity>
               </View>
+
+              <TouchableOpacity 
+                  style={styles.addWorkoutButton}
+                  onPress={handleSubmit}
+              >
+                  <Text style={styles.addWorkoutTitle}>Add Workout</Text>
+              </TouchableOpacity>
+
             </View>
           </ScrollView>
         </View>
@@ -204,7 +165,7 @@ const styles = StyleSheet.create({
     height: 740
   },
   scrollArea_contentContainerStyle: {
-    height: 1000
+    height: 2000
   },
   background: {
     top: 0,
@@ -216,14 +177,25 @@ const styles = StyleSheet.create({
   background_imageStyle: {
     opacity: 0.6
   },
+  activityTitle: {
+    top: 579,
+    position: "absolute",
+    fontFamily: "roboto-700",
+    color: "#121212",
+    width: 140,
+    height: 40,
+    fontSize: 40,
+    left: 839,
+    textAlign: "center"
+  },
   stepsSection: {
     height: 50,
     width: 254,
-    marginTop: 1139,
+    marginTop: 637,
     marginLeft: 782
   },
   rectSteps: {
-    width: 254,
+    width: 267,
     height: 50,
     backgroundColor: "rgba(174,249,173,1)",
     borderWidth: 3,
@@ -261,19 +233,8 @@ const styles = StyleSheet.create({
     marginLeft: 9,
     marginTop: 10
   },
-  activityTitle: {
-    top: 579,
-    position: "absolute",
-    fontFamily: "roboto-700",
-    color: "#121212",
-    width: 140,
-    height: 40,
-    fontSize: 40,
-    left: 839,
-    textAlign: "center"
-  },
-  weightliftingLabel: {
-    top: 657,
+  weightliftingLabel: {  
+    top: 707, 
     left: 820,
     position: "absolute",
     fontFamily: "roboto-700",
@@ -287,10 +248,25 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,1)",
     fontSize: 30,
     left: 790,
-    top: 655
+    top: 705
   },
-  cardio2: {
-    top: 889,
+  weightliftingSection: {
+    top: 737,
+    width: 254,
+    height: 102,
+    position: "absolute",
+    left: 795
+  },
+  rectWeight: {
+    width: 257,
+    height: 960,
+    backgroundColor: "rgba(173,229,249,1)",
+    borderWidth: 3,
+    borderColor: "rgba(21,42,94,1)",
+    borderRadius: 14
+  },
+  cardio2: {                  
+    top: 1769,
     left: 820,
     position: "absolute",
     fontFamily: "roboto-700",
@@ -306,236 +282,42 @@ const styles = StyleSheet.create({
     width: 30,
     height: 33,
     left: 785,
-    top: 885
-  },
-  weightliftingSection: {
-    top: 687,
-    width: 254,
-    height: 102,
-    position: "absolute",
-    left: 795
-  },
-  rectWeight: {
-    height: 102,
-    backgroundColor: "rgba(173,229,249,1)",
-    borderWidth: 3,
-    borderColor: "rgba(21,42,94,1)",
-    borderRadius: 14
-  },
-  workout2: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 56,
-    height: 17
-  },
-  enterWorkout: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 80,
-    marginLeft: 50
-  },
-  workout2Row: {
-    height: 17,
-    flexDirection: "row",
-    marginTop: 18,
-    marginLeft: 21,
-    marginRight: 47
-  },
-  sets2: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 31,
-    height: 17
-  },
-  enterSets: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 80,
-    marginLeft: 75
-  },
-  sets2Row: {
-    height: 17,
-    flexDirection: "row",
-    marginTop: 8,
-    marginLeft: 21,
-    marginRight: 47
-  },
-  repsLabel: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 35,
-    height: 17
-  },
-  enterReps: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 80,
-    marginLeft: 71
-  },
-  repsLabelRow: {
-    height: 17,
-    flexDirection: "row",
-    marginTop: 8,
-    marginLeft: 21,
-    marginRight: 47
-  },
-  addWorkoutButton: {
-    width: 227,
-    height: 31,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "rgba(22,190,60,1)",
-    borderRadius: 16,
-    marginTop: 8,
-    alignSelf: "center"
-  },
-  addWorkout2: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 12,
-    width: 75,
-    height: 14,
-    textAlign: "center",
-    marginTop: 9,
-    marginLeft: 76
-  },
-  deleteWorkoutButton: {
-    width: 227,
-    height: 31,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "rgba(208,2,27,1)",
-    borderRadius: 16,
-    marginTop: 3,
-    marginLeft: 13
-  },
-  deleteWorkout: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 12,
-    width: 85,
-    height: 14,
-    textAlign: "center",
-    marginTop: 9,
-    marginLeft: 71
+    top: 1765
   },
   cardioSection: {
-    top: 919,
+    top: 1799,
     height: 102,
     position: "absolute",
     left: 795,
     width: 254
   },
   rectCardio: {
-    width: 254,
-    height: 102,
+    width: 257,
+    height: 447,
     backgroundColor: "rgba(255,223,224,1)",
     borderWidth: 3,
     borderColor: "rgba(135,26,26,1)",
     borderRadius: 14
   },
-  exercise: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 60,
-    height: 16
-  },
-  enterExercise: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 80,
-    marginLeft: 46
-  },
-  exerciseRow: {
-    height: 16,
-    flexDirection: "row",
-    marginTop: 18,
-    marginLeft: 21,
-    marginRight: 47
-  },
-  duration: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 60,
-    height: 16
-  },
-  enterDuration: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 80,
-    marginLeft: 46
-  },
-  durationRow: {
-    height: 16,
-    flexDirection: "row",
-    marginTop: 9,
-    marginLeft: 21,
-    marginRight: 47
-  },
-  distance: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    width: 60,
-    height: 16
-  },
-  enterDistance: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 16,
-    width: 100,
-    marginLeft: 46
-  },
-  distanceRow: {
-    height: 16,
-    flexDirection: "row",
-    marginTop: 9,
-    marginLeft: 21,
-    marginRight: 27
-  },
-  addCardioButton: {
-    width: 227,
-    height: 31,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "rgba(22,190,60,1)",
+  addWorkoutButton: {
+    width: 245,
+    height: 35,
+    backgroundColor: "rgba(160,255,195,1)",
+    borderWidth: 3.5,
+    borderColor: "rgba(22,94,21,1)",
     borderRadius: 16,
+    marginTop: 2265,
+    left: 803
+  },
+  addWorkoutTitle: {
+    fontFamily: "roboto-bold",
+    color: "#000000",
+    fontSize: 15,
+    width: 95,
+    height: 14,
+    textAlign: "center",
     marginTop: 8,
-    alignSelf: "center"
-  },
-  addCardioText: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 12,
-    width: 63,
-    height: 14,
-    textAlign: "center",
-    marginTop: 9,
-    alignSelf: "center"
-  },
-  deleteCardioButton: {
-    width: 227,
-    height: 31,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderWidth: 2,
-    borderColor: "rgba(208,2,27,1)",
-    borderRadius: 16,
-    marginTop: 3,
-    alignSelf: "center"
-  },
-  deleteCardio: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 12,
-    width: 75,
-    height: 14,
-    textAlign: "center",
-    marginTop: 9,
-    alignSelf: "center"
+    marginLeft: 76
   },
   backgroundStack: {
     width: 1874,

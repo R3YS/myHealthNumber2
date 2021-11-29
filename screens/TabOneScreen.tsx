@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-
+import './global.js';
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
   View,
@@ -30,7 +30,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <Text style={styles.welcomeUser}>Welcome User!</Text>
+          <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
           <TouchableOpacity
 
             style={styles.button2}

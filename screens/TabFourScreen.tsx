@@ -164,83 +164,12 @@ const styles = StyleSheet.create({
   rect6Filler: {
     flex: 1
   },
-  rect6: {
-    height: 70,
-    backgroundColor: "rgba(0,0,0,1)",
-    marginBottom: 538,
-    marginLeft: 395,
-    marginRight: 417
-  },
   stackFiller: {
     flex: 1
   },
-  group1: {
-    left: 0,
-    height: 40,
-    position: "absolute",
-    right: 0,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    bottom: 15
-  },
-  icon1: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon2: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon3: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon4: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  button1: {
-    left: 0,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button2: {
-    left: 96,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button3: {
-    left: 191,
-    width: 85,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button4: {
-    left: 276,
-    width: 84,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  group1Stack: {
-    height: 70
-  },
   rect5: {
     top: 620,
-    width: 332,
+    width: "32.5%",
     height: 90,
     position: "absolute",
     backgroundColor: "rgba(74,144,226,0.7)",
@@ -250,7 +179,7 @@ const styles = StyleSheet.create({
     left: 409
   },
   repUnits: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 162,
     fontSize: 14,
@@ -263,7 +192,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   changeTo12: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 10,
     height: 12,
@@ -273,7 +202,7 @@ const styles = StyleSheet.create({
   },
   materialSwitch9Column: {
     width: 66,
-    marginLeft: 73
+    marginLeft: 100
   },
   repUnitsRow: {
     height: 42,
@@ -284,7 +213,7 @@ const styles = StyleSheet.create({
   },
   rect4: {
     top: 520,
-    width: 332,
+    width: "32.5%",
     height: 90,
     position: "absolute",
     backgroundColor: "rgba(74,144,226,0.7)",
@@ -294,7 +223,7 @@ const styles = StyleSheet.create({
     left: 409
   },
   foodUnits: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 150,
     fontSize: 14,
@@ -307,7 +236,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   changeToG: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 10,
     height: 12,
@@ -317,7 +246,7 @@ const styles = StyleSheet.create({
   },
   materialSwitch8Column: {
     width: 57,
-    marginLeft: 85
+    marginLeft: 115
   },
   foodUnitsRow: {
     height: 42,
@@ -328,7 +257,7 @@ const styles = StyleSheet.create({
   },
   rect3: {
     top: 419,
-    width: 332,
+    width: "32.5%",
     height: 90,
     position: "absolute",
     backgroundColor: "rgba(74,144,226,0.7)",
@@ -338,7 +267,7 @@ const styles = StyleSheet.create({
     left: 409
   },
   timeUnits: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 162,
     fontSize: 14,
@@ -351,7 +280,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   changeToHr: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 10,
     height: 12,
@@ -361,7 +290,7 @@ const styles = StyleSheet.create({
   },
   materialSwitch7Column: {
     width: 59,
-    marginLeft: 73
+    marginLeft: 105
   },
   timeUnitsRow: {
     height: 42,
@@ -372,7 +301,7 @@ const styles = StyleSheet.create({
   },
   rect2: {
     top: 320,
-    width: 332,
+    width: "32.5%",
     height: 90,
     position: "absolute",
     backgroundColor: "rgba(74,144,226,0.7)",
@@ -382,7 +311,7 @@ const styles = StyleSheet.create({
     left: 409
   },
   weightUnits: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 14,
     height: 38,
@@ -395,7 +324,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   changeToKg: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 10,
     height: 12,
@@ -405,7 +334,7 @@ const styles = StyleSheet.create({
   },
   materialSwitch6Column: {
     width: 61,
-    marginLeft: 95
+    marginLeft: 130
   },
   weightUnitsRow: {
     height: 42,
@@ -416,7 +345,7 @@ const styles = StyleSheet.create({
   },
   rect: {
     top: 220,
-    width: 332,
+    width: "32.5%",
     height: 90,
     position: "absolute",
     backgroundColor: "rgba(74,144,226,0.7)",
@@ -426,7 +355,7 @@ const styles = StyleSheet.create({
     left: 409
   },
   distanceUnits: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 14,
     textAlign: "left",
@@ -439,7 +368,7 @@ const styles = StyleSheet.create({
     marginLeft: 5
   },
   changeToKm: {
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 10,
     width: 66,
@@ -449,7 +378,7 @@ const styles = StyleSheet.create({
   },
   materialSwitch1Column: {
     width: 66,
-    marginLeft: 84
+    marginLeft: 120
   },
   distanceUnitsRow: {
     height: 42,
@@ -461,7 +390,7 @@ const styles = StyleSheet.create({
   text: {
     top: 145,
     position: "absolute",
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 40,
     left: 476,

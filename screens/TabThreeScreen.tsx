@@ -21,13 +21,8 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   const [lunch, setLunch] = React.useState("");
   const [dinner, setDinner] = React.useState("");
   const [snack, setSnack] = React.useState("");
-  const [totall, setTotal] = React.useState("");
-
   const total = parseInt(global.breakfast) + parseInt(global.lunch) + parseInt(global.dinner) + parseInt(global.snack);
-
-
-
-  const percentNormal = (total / 2000) * 100;
+  const percentNormal = (total / 2000) * 100
   return (
     <View style={styles.container}>
     <View style={styles.imageStack}>
@@ -80,14 +75,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
       <TouchableOpacity style={styles.button}
-      onPress ={() => {global.breakfast = breakfast; global.total = total;}} ></TouchableOpacity>
+      onPress ={() => {global.breakfast = breakfast}} ></TouchableOpacity>
       <TouchableOpacity style={styles.button2}
-      onPress ={() => {global.dinner = dinner; global.total = total;}}></TouchableOpacity>
+      onPress ={() => {global.dinner = dinner}}></TouchableOpacity>
       <TouchableOpacity style={styles.button3}
-      onPress ={() => {global.lunch = lunch; global.total = total;}}></TouchableOpacity>
+      onPress ={() => {global.lunch = lunch}}></TouchableOpacity>
       <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
       <TouchableOpacity style={styles.button1}
-      onPress ={() => {global.snack = snack; global.total = total;}}></TouchableOpacity>
+      onPress ={() => {global.snack = snack}}></TouchableOpacity>
       <Text style={styles.loremIpsum}>What did you eat today?</Text>
       <Text style={styles.loremIpsum1}>Total Calorie Intake: {total}
       </Text>
@@ -133,85 +128,22 @@ const styles = StyleSheet.create({
   stackFiller: {
     flex: 1
   },
-  group1: {
-    left: 0,
-    height: 40,
-    position: "absolute",
-    right: 0,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    bottom: 15
-  },
-  icon4: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon5: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon6: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon7: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  button4: {
-    left: 0,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button5: {
-    left: 98,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button6: {
-    left: 187,
-    width: 85,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button7: {
-    left: 276,
-    width: 84,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  group1Stack: {
-    height: 70
-  },
   text: {
     top: 211,
     position: "absolute",
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
+    fontWeight: "bold",
     color: "#121212",
     textAlign: "center",
     fontSize: 40,
     height: 42,
     width: 75,
-    left: 775
+    left: 800
   },
   textInput1: {
     top: 674,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     textAlign: "center",
     fontSize: 16,
@@ -226,7 +158,7 @@ const styles = StyleSheet.create({
   textInput2: {
     top: 572,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 235,
     textAlign: "center",
@@ -242,7 +174,7 @@ const styles = StyleSheet.create({
     top: 469,
     left: 653,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     textAlign: "center",
     fontSize: 16,
@@ -257,7 +189,7 @@ const styles = StyleSheet.create({
     top: 367,
     left: 653,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 235,
     textAlign: "center",
@@ -336,10 +268,10 @@ const styles = StyleSheet.create({
   loremIpsum: {
     top: 289,
     position: "absolute",
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
-    left: 706,
+    left: 725,
     width: 225,
     height: 24,
     textAlign: "center"
@@ -347,7 +279,7 @@ const styles = StyleSheet.create({
   loremIpsum1: {
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
     height: 60,
@@ -357,7 +289,7 @@ const styles = StyleSheet.create({
   loremIpsum2: {
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-700",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
     height: 29,
@@ -367,7 +299,7 @@ const styles = StyleSheet.create({
   breakfast: {
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 82,
@@ -378,7 +310,7 @@ const styles = StyleSheet.create({
     top: 444,
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 58,
@@ -388,7 +320,7 @@ const styles = StyleSheet.create({
     top: 547,
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 59,
@@ -398,7 +330,7 @@ const styles = StyleSheet.create({
     top: 649,
     left: 658,
     position: "absolute",
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 118,

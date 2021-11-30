@@ -9,6 +9,8 @@ import {
   Image,
   ImageBackground,
   Text,
+  TextInput,
+  onChangeText,
   TouchableOpacity,
   RefreshControl,
   SafeAreaView
@@ -86,8 +88,46 @@ const wait = (timeout) => {
                 What&#39;s next? Daily To-Do List
               </Text>
             </View>
-            <View >
-              <View >
+            <View style={styles.rect4Stack}>
+            <View style={styles.rect4}>
+              <Text style={styles.cardTitle}>
+                What&#39;s next? Daily To-Do List
+              </Text>
+              <TextInput
+                     style={styles.cardInfo}
+                     onChangeText={onChangeText}
+                     value={Text}
+                     placeholder="-- What should I do today?"
+              >
+              </TextInput>
+              <TextInput
+                     style={styles.cardInfo}
+                     onChangeText={onChangeText}
+                     value={Text}
+                     placeholder="-- What else could I do today?"
+              >
+              </TextInput>
+              <TextInput 
+                     style={styles.cardInfo}
+                     onChangeText={onChangeText}
+                     value={Text}
+                     placeholder="-- ... "
+              >
+              </TextInput>
+              <TextInput
+                     style={styles.cardInfo}
+                     onChangeText={onChangeText}
+                     value={Text}
+                     placeholder="-- ... "
+              >
+              </TextInput>
+              <TextInput
+                     style={styles.cardInfo}
+                     onChangeText={onChangeText}
+                     value={Text}
+                     placeholder="-- ... "
+              >
+              </TextInput>
                 <View >
                 </View>
               </View>
@@ -136,17 +176,18 @@ const styles = StyleSheet.create({
   },
   image_imageStyle: {},
   welcomeUser: {
-    fontFamily: "roboto-500",
+    fontFamily: "Roboto",
+    fontWeight: "bold",
     color: "#121212",
     fontSize: 36,
     textAlign: "center",
-    width: 325,
+    width: "20%",
     height: 47,
     marginTop: 64,
     marginLeft: 641
   },
   button2: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(178,103,245,0.5)",
     borderWidth: 0,
@@ -156,7 +197,7 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   cardTitle: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     fontWeight: "bold",
     color: "#121212",
     height: 18,
@@ -166,14 +207,14 @@ const styles = StyleSheet.create({
     fontSize:13,
   },
   cardInfo: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
-    marginLeft: 10,
-    fontSize:11,
+    marginLeft: 12,
+    fontSize:12,
     height:18,
   },
   rect2: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(239,227,77,0.5)",
     borderRadius: 15,
@@ -181,14 +222,14 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   loremIpsum: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 176,
     height: 18,
     marginLeft: 10
   },
   button: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(148,224,66,0.5)",
     borderRadius: 15,
@@ -196,7 +237,7 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   activityTracker: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 96,
     height: 18,
@@ -205,7 +246,7 @@ const styles = StyleSheet.create({
   },
   rect4: {
     top: 0,
-    width: 280,
+    width: "92%",
     height: 130,
     position: "absolute",
     backgroundColor: "rgba(123,115,115,0.5)",
@@ -213,96 +254,24 @@ const styles = StyleSheet.create({
     borderRadius: 15
   },
   loremIpsum2: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 211,
     height: 18,
     marginTop: 10,
     marginLeft: 10
   },
-  rect7: {
-    left: 0,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "rgba(0,0,0,1)",
-    bottom: 0,
-    right: 0
-  },
   stackFiller: {
     flex: 1
   },
-  group: {
-    left: 0,
-    height: 40,
-    position: "absolute",
-    right: 0,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    bottom: 15
-  },
-  icon5: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon2: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon3: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  icon4: {
-    color: "rgba(255,255,255,1)",
-    fontSize: 40
-  },
-  button5: {
-    left: 0,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button6: {
-    left: 96,
-    width: 90,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button7: {
-    left: 191,
-    width: 85,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  button8: {
-    left: 276,
-    width: 84,
-    height: 70,
-    position: "absolute",
-    backgroundColor: "#E6E6E6",
-    opacity: 0,
-    bottom: 0
-  },
-  groupStack: {
-    height: 70
-  },
-  rect4Stack: {
+   rect4Stack: {
     height: 140,
     marginTop: 20,
     marginLeft: 624,
     marginRight: 866
   },
   rect5: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(106,117,129,0.5)",
     borderRadius: 15,
@@ -310,7 +279,7 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   weeklyReport: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 96,
     height: 20,
@@ -318,7 +287,7 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   rect6: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(178,167,222,0.5)",
     borderRadius: 15,
@@ -326,7 +295,7 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   monthlyReport: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 96,
     height: 18,
@@ -334,7 +303,7 @@ const styles = StyleSheet.create({
     marginLeft: 10
   },
   button3: {
-    width: 280,
+    width: "18%",
     height: 130,
     backgroundColor: "rgba(80,227,194,0.5)",
     borderRadius: 15,
@@ -342,7 +311,7 @@ const styles = StyleSheet.create({
     marginLeft: 664
   },
   diet: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     width: 30,
     height: 18,

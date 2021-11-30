@@ -216,13 +216,13 @@ const styles = StyleSheet.create({
     marginTop: 50
   },
   workout2: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       width: 56,
       height: 17
     },
     enterWorkout: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       height: 16,
       width: 80,
@@ -236,13 +236,13 @@ const styles = StyleSheet.create({
       marginRight: 47
     },
     sets2: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       width: 31,
       height: 17
     },
     enterSets: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       height: 16,
       width: 80,
@@ -256,13 +256,13 @@ const styles = StyleSheet.create({
       marginRight: 47
     },
     repsLabel: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       width: 35,
       height: 17
     },
     enterReps: {
-      fontFamily: "roboto-regular",
+      fontFamily: "Roboto",
       color: "#121212",
       height: 16,
       width: 80,
@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     width: 30
   },
   stepCount: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 84,
@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     marginTop: 6
   },
   enterSteps: {
-    fontFamily: "roboto-regular",
+    fontFamily: "Roboto",
     color: "#121212",
     height: 16,
     width: 98,

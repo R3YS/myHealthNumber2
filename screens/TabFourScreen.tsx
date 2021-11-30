@@ -390,10 +390,11 @@ const styles = StyleSheet.create({
     top: 145,
     position: "absolute",
     fontFamily: "Roboto",
+    fontWeight: "bold",
     color: "#121212",
     fontSize: 40,
     left: 476,
-    width: 222,
+    width: "22%",
     height: 60,
     textAlign: "center"
   },

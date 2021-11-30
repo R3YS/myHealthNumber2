@@ -43,13 +43,13 @@ const WorkoutComponent = () =>{
 
 const styles = StyleSheet.create({
     workout2: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 56,
         height: 17
       },
       enterWorkout: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 80,
@@ -63,13 +63,13 @@ const styles = StyleSheet.create({
         marginRight: 47
       },
       sets2: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 31,
         height: 17
       },
       enterSets: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 80,
@@ -83,13 +83,13 @@ const styles = StyleSheet.create({
         marginRight: 47
       },
       repsLabel: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 35,
         height: 17
       },
       enterReps: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 80,

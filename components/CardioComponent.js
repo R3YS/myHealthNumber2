@@ -41,13 +41,13 @@ const CardioComponent = () =>{
 
 const styles = StyleSheet.create({
     exercise: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 60,
         height: 16
       },
       enterExercise: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 80,
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
         marginRight: 47
       },
       duration: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 60,
         height: 16
       },
       enterDuration: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 80,
@@ -81,13 +81,13 @@ const styles = StyleSheet.create({
         marginRight: 47
       },
       distance: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         width: 60,
         height: 16
       },
       enterDistance: {
-        fontFamily: "roboto-regular",
+        fontFamily: "Roboto",
         color: "#121212",
         height: 16,
         width: 100,

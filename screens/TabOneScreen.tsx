@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import './global.js';
+import './global.tsx';
 import './TabThreeScreen.tsx'
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
@@ -20,9 +20,6 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import './global.js';
-
-
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
 
  const [refreshing, setRefreshing] = React.useState(false);

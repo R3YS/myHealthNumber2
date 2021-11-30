@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import { StyleSheet } from 'react-native';
-import './global.js';
+import './global.tsx';
 import EditScreenInfo from '../components/EditScreenInfo';
 import {   View,
   Image,

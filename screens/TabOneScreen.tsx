@@ -78,14 +78,9 @@ const wait = (timeout) => {
           >
             <Text style={styles.cardTitle}>Activity Tracker</Text>
             <Text style={styles.cardInfo}>Workout: {global.workout1} Sets: {global.sets1} Reps: {global.reps1}</Text>
-          </View>
-          <View style={styles.rect4Stack}>
-            <View style={styles.rect4}>
-              <Text style={styles.cardTitle}>
-                What&#39;s next? Daily To-Do List
-              </Text>
+           
             </View>
-            <View style={styles.rect4Stack}>
+          <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
               <Text style={styles.cardTitle}>
                 What&#39;s next? Daily To-Do List
@@ -125,6 +120,9 @@ const wait = (timeout) => {
                      placeholder="-- ... "
               >
               </TextInput>
+            </View>
+            <View >
+              <View >
                 <View >
                 </View>
               </View>

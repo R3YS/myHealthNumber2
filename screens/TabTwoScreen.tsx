@@ -139,45 +139,6 @@ export default function TabTwoScreen() {
             </View>
           </ScrollView>
         </View>
-        <View style={styles.bottombar}>
-          <View style={styles.stackFiller}></View>
-          <View style={styles.groupStack}>
-            <View style={styles.group}>
-              <MaterialCommunityIconsIcon
-                name="food-apple"
-                style={styles.dieticon}
-              ></MaterialCommunityIconsIcon>
-              <MaterialIconsIcon
-                name="directions-bike"
-                style={styles.bikeicon}
-              ></MaterialIconsIcon>
-              <EntypoIcon
-                name="area-graph"
-                style={styles.summaryicon}
-              ></EntypoIcon>
-              <IoniconsIcon
-                name="md-settings"
-                style={styles.settingicon}
-              ></IoniconsIcon>
-            </View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("WelcomePage")}
-              style={styles.summarybutton}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Settings")}
-              style={styles.settingbutton}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Diet")}
-              style={styles.dietbutton}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Activity")}
-              style={styles.bikebutton}
-            ></TouchableOpacity>
-          </View>
-        </View>
       </View>
     </View>
 

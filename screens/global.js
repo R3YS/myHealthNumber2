@@ -67,3 +67,4 @@ global.breakfast = 0;
 global.lunch = 0;
 global.dinner = 0;
 global.snack = 0;
+global.total = 0;

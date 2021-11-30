@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import { StyleSheet } from 'react-native';
 import './global.tsx';
 import EditScreenInfo from '../components/EditScreenInfo';
@@ -7,7 +8,8 @@ import {   View,
   ImageBackground,
   TouchableOpacity,
   Text,
-  TextInput} from 'react-native';
+  TextInput,
+ScrollView} from 'react-native';
   import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
   import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
   import EntypoIcon from "react-native-vector-icons/Entypo";
@@ -15,9 +17,19 @@ import {   View,
   import { RootTabScreenProps } from '../types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+  const [breakfast, setBreakfast] = React.useState("");
+  const [lunch, setLunch] = React.useState("");
+  const [dinner, setDinner] = React.useState("");
+  const [snack, setSnack] = React.useState("");
+  const total = parseInt(global.breakfast) + parseInt(global.lunch) + parseInt(global.dinner) + parseInt(global.snack);
+  const percentNormal = (total / 2000) * 100
   return (
     <View style={styles.container}>
     <View style={styles.imageStack}>
+    <ScrollView
+      horizontal={false}
+      contentContainerStyle={styles.scrollArea_contentContainerStyle}
+    >
       <ImageBackground
         source={require("../assets/images/Diet2.jpg")}
         resizeMode="stretch"
@@ -25,34 +37,15 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         imageStyle={styles.image_imageStyle}
       >
         <View style={styles.rect1Filler}></View>
-        <View style={styles.rect1}>
+        <View >
           <View style={styles.stackFiller}></View>
           <View style={styles.group1Stack}>
             <View style={styles.group1}>
 
 
-              <EntypoIcon name="area-graph" style={styles.icon6}></EntypoIcon>
-              <IoniconsIcon
-                name="md-settings"
-                style={styles.icon7}
-              ></IoniconsIcon>
+
             </View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Diet")}
-              style={styles.button4}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Activity")}
-              style={styles.button5}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("WelcomePage")}
-              style={styles.button6}
-            ></TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Settings")}
-              style={styles.button7}
-            ></TouchableOpacity>
+
           </View>
         </View>
       </ImageBackground>
@@ -60,35 +53,45 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput1}
-        
+        onChangeText = {setSnack} value = {snack} keyboardType ="numeric"
+
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput2}
+        onChangeText = {setDinner} value = {dinner} keyboardType ="numeric"
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput3}
+        onChangeText = {setLunch} value = {lunch} keyboardType ="numeric"
       ></TextInput>
       <TextInput
         placeholder="Calorie Count"
         style={styles.textInput4}
+        onChangeText = {setBreakfast} value = {breakfast} keyboardType ="numeric"
       ></TextInput>
       <EntypoIcon name="check" style={styles.icon}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
-      <TouchableOpacity style={styles.button}></TouchableOpacity>
-      <TouchableOpacity style={styles.button2}></TouchableOpacity>
-      <TouchableOpacity style={styles.button3}></TouchableOpacity>
+      <TouchableOpacity style={styles.button}
+      onPress ={() => {global.breakfast = breakfast}} ></TouchableOpacity>
+      <TouchableOpacity style={styles.button2}
+      onPress ={() => {global.dinner = dinner}}></TouchableOpacity>
+      <TouchableOpacity style={styles.button3}
+      onPress ={() => {global.lunch = lunch}}></TouchableOpacity>
       <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
-      <TouchableOpacity style={styles.button1}></TouchableOpacity>
+      <TouchableOpacity style={styles.button1}
+      onPress ={() => {global.snack = snack}}></TouchableOpacity>
       <Text style={styles.loremIpsum}>What did you eat today?</Text>
-      <Text style={styles.loremIpsum1}>Total Calorie Intake: xxx</Text>
-      <Text style={styles.loremIpsum2}>Percent Daily Normal: xx%</Text>
+      <Text style={styles.loremIpsum1}>Total Calorie Intake: {total}
+      </Text>
+      <Text style={styles.loremIpsum2}>Percent Daily Normal: {percentNormal}%</Text>
       <Text style={styles.breakfast}>Breakfast:</Text>
       <Text style={styles.lunch}>Lunch:</Text>
       <Text style={styles.dinner}>Dinner:</Text>
       <Text style={styles.snacksOthers}>Snacks/Others:</Text>
+      </ScrollView>
     </View>
     </View>
 
@@ -108,6 +111,9 @@ const styles = StyleSheet.create({
   },
   image_imageStyle: {
     opacity: 0.5
+  },
+  scrollArea_contentContainerStyle: {
+    height: 1400
   },
   rect1Filler: {
     flex: 1
@@ -339,7 +345,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-700",
     color: "#121212",
     fontSize: 20,
-    height: 35,
+    height: 60,
     width: 264,
     top: 756
   },
@@ -351,7 +357,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 29,
     width: 262,
-    top: 791
+    top: 800
   },
   breakfast: {
     left: 658,

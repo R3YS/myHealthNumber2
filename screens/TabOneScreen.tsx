@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import './global.js';
+import './TabThreeScreen.tsx'
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
   View,
@@ -8,7 +9,9 @@ import {
   Image,
   ImageBackground,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
+  RefreshControl,
+  SafeAreaView
 } from "react-native";
 import { RootTabScreenProps } from '../types';
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -17,13 +20,35 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import './global.js';
 
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+ const [refreshing, setRefreshing] = React.useState(false);
+
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
+ const onRefresh = React.useCallback(() => {
+   setRefreshing(true);
+   wait(2000).then(() => setRefreshing(false));
+ }, []);
   return (
+
     <View style={styles.container}>
     <View style={styles.scrollArea}>
+
       <ScrollView
         horizontal={false}
         contentContainerStyle={styles.scrollArea_contentContainerStyle}
+        refreshControl ={
+          <RefreshControl refreshing = {refreshing}
+          onRefresh = {onRefresh}
+          />
+        }
+
+
+
+
       >
         <ImageBackground
           source={require("../assets/images/background1.jpg")}
@@ -31,6 +56,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
+
           <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
           <View style={styles.rect2}
 
@@ -46,9 +72,9 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             </View>
           <View style={styles.rect2}>
             <Text style={styles.cardTitle}>Let&#39;s take a look at our day!</Text>
-            <Text style={styles.cardInfo}>You have consumed {global.height} calories today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.total} calories today!</Text>
             <Text style={styles.cardInfo}>You burned a whopping {global.height} calories today!</Text>
-            <Text style={styles.cardInfo}>Total Time Exercised: {global.height}</Text>
+            <Text style={styles.cardInfo}>Total Time Exercised: {global.weight}</Text>
             <Text style={styles.cardInfo}>Let's Keep it Going! You're on Fire!</Text>
           </View>
           <View style={styles.rect2}
@@ -81,6 +107,9 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
             style={styles.button3}
           >
             <Text style={styles.cardTitle}>Diet</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
           </View>
         </ImageBackground>
       </ScrollView>

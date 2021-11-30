@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import './global.js';
+import './global.tsx';
 import './TabThreeScreen.tsx'
 import EditScreenInfo from '../components/EditScreenInfo';
 import {

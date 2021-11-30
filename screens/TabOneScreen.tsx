@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import './global.tsx';
+import './global.js';
 import './TabThreeScreen.tsx'
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
@@ -14,7 +14,11 @@ import {
   SafeAreaView
 } from "react-native";
 import { RootTabScreenProps } from '../types';
-
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import './global.js';
 
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
@@ -48,14 +52,14 @@ const wait = (timeout) => {
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <Text style={styles.welcomeUser}>Welcome {global.nombre}!</Text>
+
           <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
           <View style={styles.rect2}
 
             style={styles.button2}
           >
             <Text style={styles.cardTitle}>My Health ID</Text>
-            <Text style={styles.cardInfo}>Name: {global.nombre}</Text>
+            <Text style={styles.cardInfo}>Name: {global.name}</Text>
             <Text style={styles.cardInfo}>Age: {global.age}</Text>
             <Text style={styles.cardInfo}>Weight: {global.weight} lbs</Text>
             <Text style={styles.cardInfo}>Height: {global.height} cm</Text>
@@ -74,6 +78,7 @@ const wait = (timeout) => {
             style={styles.button}
           >
             <Text style={styles.cardTitle}>Activity Tracker</Text>
+            <Text style={styles.cardInfo}>Workout: {global.workout1} Sets: {global.sets1} Reps: {global.reps1}</Text>
           </View>
           <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
@@ -100,8 +105,9 @@ const wait = (timeout) => {
           >
             <Text style={styles.cardTitle}>Diet</Text>
             <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
-            <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
-            <Text style={styles.cardInfo}>You have consumed {global.breakfast} calories for breakfast today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.lunch} calories for lunch today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.dinner} calories for dinner today!</Text>
+            <Text style={styles.cardInfo}>You have consumed {global.snack} calories in snacks today!</Text>
           </View>
         </ImageBackground>
       </ScrollView>
@@ -163,7 +169,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     color: "#121212",
     marginLeft: 10,
-    fontSize:12,
+    fontSize:11,
     height:18,
   },
   rect2: {

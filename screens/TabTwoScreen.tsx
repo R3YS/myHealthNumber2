@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import './global.tsx';
+import './global.js';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { View,
 ScrollView,
@@ -15,7 +15,7 @@ import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import WorkoutComponent from '../components/WorkoutComponent';
+import WorkoutComponent from '../components/WorkoutComponent1';
 import CardioComponent from '../components/CardioComponent';
 
 const handleSubmit = event => {
@@ -24,6 +24,9 @@ const handleSubmit = event => {
 }
 
 export default function TabTwoScreen() {
+  const [workout1, setWorkout1] = React.useState("");
+  const [sets1, setSets1] = React.useState("");
+  const [reps1, setReps1] = React.useState("");
   return (
     <View style={styles.container}>
       <View style={styles.scrollAreaStack}>
@@ -60,7 +63,7 @@ export default function TabTwoScreen() {
                 placeholderTextColor="rgba(0,0,0,1)"
                 style={styles.activityTitle}
               ></TextInput>
-              <Text style={styles.weightliftingLabel}>Weightlifting:</Text>
+              <Text style={styles.weightliftingLabel}>Weightlifting: </Text>
               <MaterialCommunityIconsIcon
                 name="weight"
                 style={styles.iconWeight}
@@ -70,23 +73,52 @@ export default function TabTwoScreen() {
                 name="bike"
                 style={styles.cardioicon}
               ></MaterialCommunityIconsIcon>
-              
+
               <View style={styles.weightliftingSection}>
                 <View style={styles.rectWeight}>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
-                  <WorkoutComponent/>
+                <View >
+                  <View style={styles.workout2Row}>
+                      <Text style={styles.workout2}>Workout:</Text>
+                      <TextInput
+                          placeholder="Workout"
+                          style={styles.enterWorkout}
+                         onChangeText={setWorkout1}
+                          value = {workout1}
+                      ></TextInput>
+                  </View>
+                  <View style={styles.sets2Row}>
+                      <Text style={styles.sets2}>Sets:</Text>
+                      <TextInput
+                          placeholder="# of Sets"
+                          keyboardType="numeric"
+                          style={styles.enterSets}
+                          onChangeText={setSets1}
+                          value = {sets1}
+                      ></TextInput>
+                  </View>
+                  <View style={styles.repsLabelRow}>
+                      <Text style={styles.repsLabel}>Reps:</Text>
+                      <TextInput
+                          placeholder="# of Reps"
+                          keyboardType="numeric"
+                          style={styles.enterReps}
+                          onChangeText={setReps1}
+                          value = {reps1}
+                      ></TextInput>
+                  </View>
+                  <TouchableOpacity
+                      style={styles.addWorkoutButton}
+                    //  onPress={() => {global.workout1 = workout1}}
+                    >
+                    <Text style={styles.addWorkoutButton}>Add Workout</Text>
+
+                      <Text style={styles.addWorkoutTitle}>Add Workout</Text>
+                  </TouchableOpacity>
+                </View>
+
                 </View>
               </View>
-              
+
               <View style={styles.cardioSection}>
                 <View style={styles.rectCardio}>
                   <CardioComponent/>
@@ -97,9 +129,9 @@ export default function TabTwoScreen() {
                 </View>
               </View>
 
-              <TouchableOpacity 
+              <TouchableOpacity
                   style={styles.addWorkoutButton}
-                  onPress={handleSubmit}
+                  onPress={() => {global.workout1 = workout1; global.sets1 = sets1; global.reps1 = reps1}}
               >
                   <Text style={styles.addWorkoutTitle}>Add Workout</Text>
               </TouchableOpacity>
@@ -174,6 +206,94 @@ const styles = StyleSheet.create({
     height: 2229,
     position: "absolute"
   },
+  rectWeight: {
+    width: 257,
+    height: 110,
+    backgroundColor: "rgba(173,229,249,1)",
+    borderWidth: 3,
+    borderColor: "rgba(21,42,94,1)",
+    borderRadius: 14,
+    marginTop: 50
+  },
+  workout2: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      width: 56,
+      height: 17
+    },
+    enterWorkout: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      height: 16,
+      width: 80,
+      marginLeft: 50
+    },
+    workout2Row: {
+      height: 17,
+      flexDirection: "row",
+      marginTop: 18,
+      marginLeft: 21,
+      marginRight: 47
+    },
+    sets2: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      width: 31,
+      height: 17
+    },
+    enterSets: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      height: 16,
+      width: 80,
+      marginLeft: 75
+    },
+    sets2Row: {
+      height: 17,
+      flexDirection: "row",
+      marginTop: 8,
+      marginLeft: 21,
+      marginRight: 47
+    },
+    repsLabel: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      width: 35,
+      height: 17
+    },
+    enterReps: {
+      fontFamily: "roboto-regular",
+      color: "#121212",
+      height: 16,
+      width: 80,
+      marginLeft: 71
+    },
+    repsLabelRow: {
+      height: 17,
+      flexDirection: "row",
+      marginTop: 8,
+      marginLeft: 21,
+      marginRight: 47
+    },
+    addWorkoutButton: {
+      width: 245,
+      height: 35,
+      backgroundColor: "rgba(255,255,190,1)",
+      borderWidth: 3.5,
+      borderColor: "rgba(225,255,20,1)",
+      borderRadius: 16,
+      marginTop: 25,
+    },
+    addWorkoutTitle: {
+      fontFamily: "roboto-bold",
+      color: "#000000",
+      fontSize: 15,
+      width: 95,
+      height: 14,
+      textAlign: "center",
+      marginTop: 8,
+      marginLeft: 76
+    },
   background_imageStyle: {
     opacity: 0.6
   },
@@ -233,14 +353,14 @@ const styles = StyleSheet.create({
     marginLeft: 9,
     marginTop: 10
   },
-  weightliftingLabel: {  
-    top: 707, 
+  weightliftingLabel: {
+    top: 707,
     left: 820,
     position: "absolute",
     fontFamily: "roboto-700",
     color: "rgba(0,0,0,1)",
     fontSize: 20,
-    width: 128,
+    width: 200,
     height: 27
   },
   iconWeight: {
@@ -265,7 +385,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(21,42,94,1)",
     borderRadius: 14
   },
-  cardio2: {                  
+  cardio2: {
     top: 1769,
     left: 820,
     position: "absolute",

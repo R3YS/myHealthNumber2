@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from 'react';
 import { StyleSheet } from 'react-native';
-import './global.tsx';
+import './global.js';
 import EditScreenInfo from '../components/EditScreenInfo';
 import {   View,
   Image,
@@ -21,8 +21,13 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   const [lunch, setLunch] = React.useState("");
   const [dinner, setDinner] = React.useState("");
   const [snack, setSnack] = React.useState("");
+  const [totall, setTotal] = React.useState("");
+
   const total = parseInt(global.breakfast) + parseInt(global.lunch) + parseInt(global.dinner) + parseInt(global.snack);
-  const percentNormal = (total / 2000) * 100
+
+
+
+  const percentNormal = (total / 2000) * 100;
   return (
     <View style={styles.container}>
     <View style={styles.imageStack}>
@@ -75,14 +80,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
       <TouchableOpacity style={styles.button}
-      onPress ={() => {global.breakfast = breakfast}} ></TouchableOpacity>
+      onPress ={() => {global.breakfast = breakfast; global.total = total;}} ></TouchableOpacity>
       <TouchableOpacity style={styles.button2}
-      onPress ={() => {global.dinner = dinner}}></TouchableOpacity>
+      onPress ={() => {global.dinner = dinner; global.total = total;}}></TouchableOpacity>
       <TouchableOpacity style={styles.button3}
-      onPress ={() => {global.lunch = lunch}}></TouchableOpacity>
+      onPress ={() => {global.lunch = lunch; global.total = total;}}></TouchableOpacity>
       <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
       <TouchableOpacity style={styles.button1}
-      onPress ={() => {global.snack = snack}}></TouchableOpacity>
+      onPress ={() => {global.snack = snack; global.total = total;}}></TouchableOpacity>
       <Text style={styles.loremIpsum}>What did you eat today?</Text>
       <Text style={styles.loremIpsum1}>Total Calorie Intake: {total}
       </Text>

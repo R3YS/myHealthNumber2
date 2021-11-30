@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import './global.tsx';
-import './global.js';
 import './TabThreeScreen.tsx'
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
@@ -42,10 +41,6 @@ const wait = (timeout) => {
           onRefresh = {onRefresh}
           />
         }
-
-
-
-
       >
         <ImageBackground
           source={require("../assets/images/background1.jpg")}

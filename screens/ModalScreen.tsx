@@ -15,11 +15,11 @@ export default function ModalScreen() {
   const [height, setHeight] = React.useState(null);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{global.name}'s Information</Text>
+      <Text style={styles.title}>{global.nombre}'s Information</Text>
       <Text style={styles.subtitle}>Go Ahead and Change the Info, We'll Take Care of The Rest</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <Text style={styles.subsubtitle}>Name:</Text>
-      <TextInput style={styles.input} placeholder = {global.name} onChangeText={(value) => setName(value)}  />
+      <TextInput style={styles.input} placeholder = {global.nombre} onChangeText={(value) => setName(value)}  />
       <Text style={styles.subsubtitle}>Age:</Text>
       <TextInput style={styles.input} onChangeText={setAge} value={age} placeholder = {global.age} keyboardType="numeric" />
       <Text style={styles.subsubtitle}>Height:</Text>

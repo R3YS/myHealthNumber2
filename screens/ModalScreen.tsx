@@ -5,7 +5,7 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { SafeAreaView,TextInput } from 'react-native';
 import { Button, Alert} from "react-native";
-import './global.js';
+import './global.tsx';
 
 export default function ModalScreen() {
   //I set up constants for each variable. These do not reference Global Varaibles YET but will be copied in the Function

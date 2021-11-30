@@ -18,7 +18,7 @@ import MaterialSwitch8 from "../components/MaterialSwitch8";
 import MaterialSwitch7 from "../components/MaterialSwitch7";
 import MaterialSwitch6 from "../components/MaterialSwitch6";
 import MaterialSwitch1 from "../components/MaterialSwitch1";
-import './global.js';
+import './global.tsx';
 
 export default function TabFourScreen({ navigation }: RootTabScreenProps<'TabFour'>) {
   return (

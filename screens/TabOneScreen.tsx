@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import './global.js';
+import './global.tsx';
 import EditScreenInfo from '../components/EditScreenInfo';
 import {
   View,
@@ -11,11 +11,7 @@ import {
   TouchableOpacity
 } from "react-native";
 import { RootTabScreenProps } from '../types';
-import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import './global.js';
+
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -31,13 +27,13 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
-          <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
+          <Text style={styles.welcomeUser}>Welcome {global.nombre}!</Text>
           <View style={styles.rect2}
 
             style={styles.button2}
           >
             <Text style={styles.cardTitle}>My Health ID</Text>
-            <Text style={styles.cardInfo}>Name: {global.name}</Text>
+            <Text style={styles.cardInfo}>Name: {global.nombre}</Text>
             <Text style={styles.cardInfo}>Age: {global.age}</Text>
             <Text style={styles.cardInfo}>Weight: {global.weight} lbs</Text>
             <Text style={styles.cardInfo}>Height: {global.height} cm</Text>

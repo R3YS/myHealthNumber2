@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     opacity: 0.5
   },
   scrollArea_contentContainerStyle: {
-    height: 1000
+    height: 700
   },
   rect1Filler: {
     flex: 1
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text: {
-    top: 211,
+    top: 65,
     position: "absolute",
     fontFamily: "Roboto",
     fontWeight: "bold",
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   textInput1: {
-    top: 674,
+    top: 490,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -167,11 +167,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: 235,
     height: 58,
-    left: 100,
+    left: 70,
     backgroundColor: "rgba(248,231,28,0.5)"
   },
   textInput2: {
-    top: 572,
+    top: 390,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -183,11 +183,11 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderRadius: 15,
     height: 58,
-    left: 100
+    left: 70
   },
   textInput3: {
-    top: 469,
-    left: 100,
+    top: 300,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
     height: 58
   },
   textInput4: {
-    top: 367,
-    left: 100,
+    top: 200,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -217,71 +217,71 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(248,231,28,0.5)"
   },
   icon: {
-    top: 375,
+    top: 200,
     position: "absolute",
     color: "rgba(66,133,48,1)",
     fontSize: 40,
-    right: 364
+    right: 60
   },
   icon2: {
-    top: 576,
+    top: 300,
     position: "absolute",
     color: "rgba(66,133,48,1)",
     fontSize: 40,
-    right: 361
+    right: 60
   },
   icon3: {
-    top: 477,
+    top: 400,
     position: "absolute",
     color: "rgba(66,133,48,1)",
     fontSize: 40,
-    right: 363
+    right: 60
   },
   button: {
-    top: 369,
+    top: 200,
     height: 50,
     position: "absolute",
     backgroundColor: "#E6E6E6",
     opacity: 0,
-    right: 360,
+    right: 60,
     width: 50
   },
   button2: {
-    top: 576,
+    top: 300,
     height: 50,
     position: "absolute",
     backgroundColor: "#E6E6E6",
     opacity: 0,
     width: 50,
-    right: 357
+    right: 60
   },
   button3: {
-    top: 474,
+    top: 400,
     height: 50,
     position: "absolute",
     backgroundColor: "#E6E6E6",
     opacity: 0,
-    right: 358,
+    right: 60,
     width: 50
   },
   icon1: {
     position: "absolute",
     color: "rgba(66,133,48,1)",
     fontSize: 40,
-    right: 364,
-    top: 675
+    right: 60,
+    top: 500
   },
   button1: {
-    top: 670,
+    top: 500,
     position: "absolute",
     backgroundColor: "#E6E6E6",
     opacity: 0,
     height: 50,
     width: 50,
-    right: 358
+    right: 60
   },
   loremIpsum: {
-    top: 289,
+    top: 130,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -292,38 +292,38 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   loremIpsum1: {
-    left: 100,
+    left: 40,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
     height: 60,
     width: 264,
-    top: 756
+    top: 570
   },
   loremIpsum2: {
-    left: 100,
+    left: 40,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
     height: 29,
     width: 262,
-    top: 800
+    top: 600
   },
   breakfast: {
-    left: 100,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
     fontSize: 16,
     width: 82,
     height: 20,
-    top: 341
+    top: 175
   },
   lunch: {
-    top: 444,
-    left: 100,
+    top: 275,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -332,8 +332,8 @@ const styles = StyleSheet.create({
     height: 20
   },
   dinner: {
-    top: 547,
-    left: 100,
+    top: 368,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -342,8 +342,8 @@ const styles = StyleSheet.create({
     height: 20
   },
   snacksOthers: {
-    top: 649,
-    left: 100,
+    top: 465,
+    left: 70,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",

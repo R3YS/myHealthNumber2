@@ -71,8 +71,9 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabOne"
         component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+        options={({ navigation}: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
+          headerTransparent: true,
           headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <MaterialIcons name="home" size={24} color="black" />,
           headerRight: () => (
@@ -96,6 +97,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: 'Activity',
+          headerShown: false,
           headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <FontAwesome5 name="running" size={24} color="black" />,
         }}
@@ -105,6 +107,7 @@ function BottomTabNavigator() {
         component={TabThreeScreen}
         options={{
           title: 'Diet',
+          headerShown: false,
           headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="food-apple" size={24} color="black" />,
         }}
@@ -114,6 +117,7 @@ function BottomTabNavigator() {
         component={TabFourScreen}
         options={{
           title: 'Settings',
+          headerShown: false,
           headerTitle:() => {return null},
           tabBarIcon: ({ color }) => <Ionicons name="md-settings-sharp" size={24} color="black" />,
         }}

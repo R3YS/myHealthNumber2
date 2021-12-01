@@ -53,7 +53,7 @@ export default function TabTwoScreen() {
           >
             <View style={styles.backgroundStack}>
               <ImageBackground
-                source={require("../assets/images/adi-goldstein-7BpeiA0bhxs-unsplash.jpg")}
+                source={require("../assets/images/background5.jpg")}
                 resizeMode="cover"
                 style={styles.background}
                 imageStyle={styles.background_imageStyle}
@@ -198,11 +198,9 @@ export default function TabTwoScreen() {
                           value = {reps3}
                       ></TextInput>
                   </View>
-                  <Button
-                        title="Add Workout"
-                        onPress={() => {global.workout3 = workout3; global.sets3 = sets3; global.reps3 = reps3}}/>
                 </View>
                 </View>
+                <Button title="Add Workout" onPress={() => {global.workout3 = workout3; global.sets3 = sets3; global.reps3 = reps3}}/>
 
               </View>
 
@@ -291,21 +289,17 @@ const styles = StyleSheet.create({
     flex: 1
   },
   scrollArea: {
-    position: "absolute",
+    flex: 1,
     backgroundColor: "rgba(230, 230, 230,1)",
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 740
   },
   scrollArea_contentContainerStyle: {
-    height: 1250
+    height: 1000
   },
   background: {
     top: 0,
     left: 0,
-    width: 1874,
-    height: 2229,
+    width: '100%',
+    height: "100%",
     position: "absolute"
   },
   background_imageStyle: {

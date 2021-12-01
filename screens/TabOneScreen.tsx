@@ -46,17 +46,14 @@ const wait = (timeout) => {
         }
       >
         <ImageBackground
-          source={require("../assets/images/background1.jpg")}
+          source={require("../assets/images/background2.jpg")}
           resizeMode="cover"
           style={styles.image}
           imageStyle={styles.image_imageStyle}
         >
 
           <Text style={styles.welcomeUser}>Welcome {global.nombre}!</Text>
-          <View style={styles.rect2}
-
-            style={styles.button2}
-          >
+          <View style={styles.block1}>
             <Text style={styles.cardTitle}>My Health ID</Text>
             <Text style={styles.cardInfo}>Name: {global.nombre}</Text>
             <Text style={styles.cardInfo}>Age: {global.age}</Text>
@@ -64,18 +61,17 @@ const wait = (timeout) => {
             <Text style={styles.cardInfo}>Height: {global.height} cm</Text>
             <Text style={styles.cardInfo}>Body Mass Index: {global.height} cm</Text>
 
-            </View>
-          <View style={styles.rect2}>
+          </View>
+          
+          <View style={styles.block1}>
             <Text style={styles.cardTitle}>Let&#39;s take a look at our day!</Text>
             <Text style={styles.cardInfo}>You have consumed {global.total} calories today!</Text>
             <Text style={styles.cardInfo}>You burned a whopping {global.height} calories today!</Text>
             <Text style={styles.cardInfo}>Total Time Exercised: {global.weight}</Text>
             <Text style={styles.cardInfo}>Let's Keep it Going! You're on Fire!</Text>
           </View>
-          <View style={styles.rect2}
-
-            style={styles.button}
-          >
+          
+          <View style={styles.rect2}>
             <Text style={styles.cardTitle}>Activity Tracker</Text>
             <Text style={styles.cardInfo}>Workout 1: {global.workout1}  Sets: {global.sets1}  Reps: {global.reps1}</Text>
             <Text style={styles.cardInfo}>Workout 2: {global.workout2}  Sets: {global.sets2}  Reps: {global.reps2}</Text>
@@ -83,7 +79,8 @@ const wait = (timeout) => {
             <Text style={styles.cardInfo}>Exercise 1: {global.exercise1}  Duration: {global.duration1}  Reps: {global.distance1}</Text>
             <Text style={styles.cardInfo}>Exercise 2: {global.exercise2}  Duration: {global.duration2}  Reps: {global.distance2}</Text>
            
-            </View>
+          </View>
+          
           <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
               <Text style={styles.cardTitle}>
@@ -324,5 +321,13 @@ const styles = StyleSheet.create({
     height: 18,
     marginTop: 10,
     marginLeft: 10
-  }
+  },
+  block1: {
+    width: "18%",
+    height: 130,
+    backgroundColor: "rgba(239,227,77,0.5)",
+    borderRadius: 15,
+    marginTop: 20,
+    marginLeft: 664
+  },
 });

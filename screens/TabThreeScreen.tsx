@@ -34,7 +34,7 @@ const wait = (timeout) => {
  }, []);
   return (
     <View style={styles.container}>
-    <View style={styles.imageStack}>
+    <View style={styles.scrollArea}>
     <ScrollView
       horizontal={false}
       contentContainerStyle={styles.scrollArea_contentContainerStyle}
@@ -43,8 +43,8 @@ const wait = (timeout) => {
   }
     >
       <ImageBackground
-        source={require("../assets/images/Diet2.jpg")}
-        resizeMode="stretch"
+        source={require("../assets/images/background4.jpg")}
+        resizeMode="cover"
         style={styles.image}
         imageStyle={styles.image_imageStyle}
       >
@@ -112,7 +112,7 @@ const wait = (timeout) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   image: {
     top: 0,
@@ -125,11 +125,15 @@ const styles = StyleSheet.create({
     opacity: 0.5
   },
   scrollArea_contentContainerStyle: {
-    height: 1400
+    height: 1000
   },
   rect1Filler: {
     flex: 1
   },
+  scrollArea: {
+    backgroundColor: "rgba(255,255,255,1)",
+    flex: 1},
+
   rect1: {
     height: 70,
     backgroundColor: "rgba(0,0,0,1)",
@@ -148,9 +152,8 @@ const styles = StyleSheet.create({
     color: "#121212",
     textAlign: "center",
     fontSize: 40,
-    height: 42,
-    width: 75,
-    left: 800
+    height: '100%',
+    width: '100%',
   },
   textInput1: {
     top: 674,
@@ -163,8 +166,8 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderRadius: 15,
     width: 235,
-    left: 653,
     height: 58,
+    left: 100,
     backgroundColor: "rgba(248,231,28,0.5)"
   },
   textInput2: {
@@ -180,11 +183,11 @@ const styles = StyleSheet.create({
     borderColor: "#000000",
     borderRadius: 15,
     height: 58,
-    left: 653
+    left: 100
   },
   textInput3: {
     top: 469,
-    left: 653,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -199,7 +202,7 @@ const styles = StyleSheet.create({
   },
   textInput4: {
     top: 367,
-    left: 653,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -283,13 +286,13 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     color: "#121212",
     fontSize: 20,
-    left: 725,
+    left: 100,
     width: 225,
     height: 24,
     textAlign: "center"
   },
   loremIpsum1: {
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -299,7 +302,7 @@ const styles = StyleSheet.create({
     top: 756
   },
   loremIpsum2: {
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -309,7 +312,7 @@ const styles = StyleSheet.create({
     top: 800
   },
   breakfast: {
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -320,7 +323,7 @@ const styles = StyleSheet.create({
   },
   lunch: {
     top: 444,
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -330,7 +333,7 @@ const styles = StyleSheet.create({
   },
   dinner: {
     top: 547,
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -340,7 +343,7 @@ const styles = StyleSheet.create({
   },
   snacksOthers: {
     top: 649,
-    left: 658,
+    left: 100,
     position: "absolute",
     fontFamily: "Roboto",
     color: "#121212",
@@ -353,6 +356,14 @@ const styles = StyleSheet.create({
     height: 1196,
     marginTop: -161,
     marginLeft: -633
-  }
+  },
+  block1: {
+    width: "18%",
+    height: 130,
+    backgroundColor: "rgba(239,227,77,0.5)",
+    borderRadius: 15,
+    marginTop: 20,
+    marginLeft: 664
+  },
 
 });

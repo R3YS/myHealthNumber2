@@ -20,7 +20,12 @@ globalAny.duration1 = 15;
 globalAny.duration2 = 15;
 globalAny.distance1 = 3;
 globalAny.distance2 = 3;
-globalAny.breakfast = 1;
+globalAny.breakfast = 0;
+globalAny.lunch = 0;
+globalAny.dinner = 0;
+globalAny.snack = 0;
+globalAny.total = 0;
+
 //DECLARATION OF VARIABLE TYPES, NOT NECESSARY BUT ERASES PROBLEMS.
 var nombre: string;
 var age: number;

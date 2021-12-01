@@ -77,15 +77,14 @@ const wait = (timeout) => {
             style={styles.button}
           >
             <Text style={styles.cardTitle}>Activity Tracker</Text>
-            <Text style={styles.cardInfo}>Workout: {global.workout1} Sets: {global.sets1} Reps: {global.reps1}</Text>
-          </View>
-          <View style={styles.rect4Stack}>
-            <View style={styles.rect4}>
-              <Text style={styles.cardTitle}>
-                What&#39;s next? Daily To-Do List
-              </Text>
+            <Text style={styles.cardInfo}>Workout 1: {global.workout1}  Sets: {global.sets1}  Reps: {global.reps1}</Text>
+            <Text style={styles.cardInfo}>Workout 2: {global.workout2}  Sets: {global.sets2}  Reps: {global.reps2}</Text>
+            <Text style={styles.cardInfo}>Workout 3: {global.workout3}  Sets: {global.sets3}  Reps: {global.reps3}</Text>
+            <Text style={styles.cardInfo}>Exercise 1: {global.exercise1}  Duration: {global.duration1}  Reps: {global.distance1}</Text>
+            <Text style={styles.cardInfo}>Exercise 2: {global.exercise2}  Duration: {global.duration2}  Reps: {global.distance2}</Text>
+           
             </View>
-            <View style={styles.rect4Stack}>
+          <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
               <Text style={styles.cardTitle}>
               </Text>
@@ -124,16 +123,28 @@ const wait = (timeout) => {
                      placeholder="-- ... "
               >
               </TextInput>
+            </View>
+            <View >
+              <View >
                 <View >
                 </View>
               </View>
             </View>
           </View>
-          <View style={styles.rect5}>
+          <View>
             <Text style={styles.cardTitle}>Weekly Report</Text>
+            <Text style={styles.cardInfo}>Monday:</Text>
+            <Text style={styles.cardInfo}>Tuesday:</Text>
+            <Text style={styles.cardInfo}>Wednesday:</Text>
+            <Text style={styles.cardInfo}>Thursday:</Text>
+            <Text style={styles.cardInfo}>Friday:</Text>
           </View>
-          <View style={styles.rect6}>
+          <View>
             <Text style={styles.cardTitle}>Monthly Report</Text>
+            <Text style={styles.cardInfo}>Week 1:</Text>
+            <Text style={styles.cardInfo}>Week 2:</Text>
+            <Text style={styles.cardInfo}>Week 3:</Text>
+            <Text style={styles.cardInfo}>Week 4:</Text>
           </View>
           <View style={styles.rect2}
 
@@ -162,7 +173,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   scrollArea_contentContainerStyle: {
-    height: 1300
+    height: 1000
   },
   image: {
     width: 1850,
@@ -303,7 +314,7 @@ const styles = StyleSheet.create({
     height: 130,
     backgroundColor: "rgba(80,227,194,0.5)",
     borderRadius: 15,
-    marginTop: 20,
+    marginTop: -210,
     marginLeft: 664
   },
   diet: {

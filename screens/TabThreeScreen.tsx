@@ -9,7 +9,7 @@ import {   View,
   TouchableOpacity,
   Text,
   TextInput,
-ScrollView} from 'react-native';
+ScrollView, SafeAreaView, RefreshControl} from 'react-native';
   import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
   import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
   import EntypoIcon from "react-native-vector-icons/Entypo";
@@ -22,13 +22,25 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
   const [dinner, setDinner] = React.useState("");
   const [snack, setSnack] = React.useState("");
   const total = parseInt(global.breakfast) + parseInt(global.lunch) + parseInt(global.dinner) + parseInt(global.snack);
-  const percentNormal = (total / 2000) * 100
+  const percentNormal = (total / 2000) * 100;
+  const [refreshing, setRefreshing] = React.useState(false);
+
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
+ const onRefresh = React.useCallback(() => {
+   setRefreshing(true);
+   wait(2000).then(() => setRefreshing(false));
+ }, []);
   return (
     <View style={styles.container}>
     <View style={styles.imageStack}>
     <ScrollView
       horizontal={false}
       contentContainerStyle={styles.scrollArea_contentContainerStyle}
+      refreshControl = {<RefreshControl refreshing = {refreshing}
+    onRefresh = {onRefresh}/>
+  }
     >
       <ImageBackground
         source={require("../assets/images/Diet2.jpg")}
@@ -75,14 +87,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <EntypoIcon name="check" style={styles.icon2}></EntypoIcon>
       <EntypoIcon name="check" style={styles.icon3}></EntypoIcon>
       <TouchableOpacity style={styles.button}
-      onPress ={() => {global.breakfast = breakfast}} ></TouchableOpacity>
+      onPress ={() => {global.breakfast = breakfast; global.total = total;}} ></TouchableOpacity>
       <TouchableOpacity style={styles.button2}
-      onPress ={() => {global.dinner = dinner}}></TouchableOpacity>
+      onPress ={() => {global.dinner = dinner; global.total = total;}}></TouchableOpacity>
       <TouchableOpacity style={styles.button3}
-      onPress ={() => {global.lunch = lunch}}></TouchableOpacity>
+      onPress ={() => {global.lunch = lunch; global.total = total;}}></TouchableOpacity>
       <EntypoIcon name="check" style={styles.icon1}></EntypoIcon>
       <TouchableOpacity style={styles.button1}
-      onPress ={() => {global.snack = snack}}></TouchableOpacity>
+      onPress ={() => {global.snack = snack; global.total = total;}}></TouchableOpacity>
       <Text style={styles.loremIpsum}>What did you eat today?</Text>
       <Text style={styles.loremIpsum1}>Total Calorie Intake: {total}
       </Text>

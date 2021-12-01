@@ -52,13 +52,13 @@ const wait = (timeout) => {
           imageStyle={styles.image_imageStyle}
         >
 
-          <Text style={styles.welcomeUser}>Welcome {global.name}!</Text>
+          <Text style={styles.welcomeUser}>Welcome {global.nombre}!</Text>
           <View style={styles.rect2}
 
             style={styles.button2}
           >
             <Text style={styles.cardTitle}>My Health ID</Text>
-            <Text style={styles.cardInfo}>Name: {global.name}</Text>
+            <Text style={styles.cardInfo}>Name: {global.nombre}</Text>
             <Text style={styles.cardInfo}>Age: {global.age}</Text>
             <Text style={styles.cardInfo}>Weight: {global.weight} lbs</Text>
             <Text style={styles.cardInfo}>Height: {global.height} cm</Text>
@@ -88,7 +88,6 @@ const wait = (timeout) => {
             <View style={styles.rect4Stack}>
             <View style={styles.rect4}>
               <Text style={styles.cardTitle}>
-                What&#39;s next? Daily To-Do List
               </Text>
               <TextInput
                      style={styles.cardInfo}

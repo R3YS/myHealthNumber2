@@ -1,12 +1,12 @@
 <h1 align="center">
   <a href="https://reactnative.dev/">
-    React Native
+    myHealth v2
   </a>
 </h1>
 
 <p align="center">
-  <strong>Learn once, write anywhere:</strong><br>
-  Build mobile apps with React.
+  <strong>Your Health, In your Hands:</strong><br>
+  Let's Work Together!
 </p>
 
 <p align="center">
